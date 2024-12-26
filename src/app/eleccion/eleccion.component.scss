@@ -1,0 +1,133 @@
+/* Estilo del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 70px;
+}
+
+.header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-top: 70px;
+}
+
+/* Estilo del Contenedor */
+.eleccion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/FondoJuegos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+/* Enlaces de los juegos */
+.eleccion-container a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.eleccion-container a:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 188, 255, 0.8);
+}
+
+/* Añadir efectos visuales al texto */
+.eleccion-container a:active {
+  transform: scale(1);
+  background-color: rgba(0, 188, 255, 1);
+}
+
+/* Efecto de sombra al pasar el ratón */
+.eleccion-container a:hover {
+  box-shadow: 0 6px 10px rgba(0, 188, 255, 0.7);
+}
+
+/* Estilo general del footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo en el centro */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Enlaces en el footer */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-bottom: 70px;
+}

@@ -1,0 +1,276 @@
+/* Estilo del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 70px;
+}
+
+.header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-top: 70px;
+}
+
+//Estilo tragapperras
+.tragaperras-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../assets/FondoJuegos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.slot-machine-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px auto;
+  flex-wrap: nowrap;
+  font-family: Arial, sans-serif;
+}
+
+.slot-machine {
+  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  border: 5px solid #ecf0f1;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.top-decoration {
+  background: linear-gradient(to bottom, #e74c3c, #c0392b);
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  box-shadow: inset 0 -4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.slots {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.slot {
+  width: 80px;
+  height: 80px;
+  margin: 0 5px;
+  background: linear-gradient(to bottom, #000, #333);
+  border: 3px solid #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-size: 2rem;
+  color: #ffdd59;
+}
+
+.bottom-decoration {
+  margin-top: 10px;
+  background: linear-gradient(to top, #e67e22, #d35400);
+  padding: 10px 0;
+  border-radius: 0 0 20px 20px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.lights {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.light {
+  width: 15px;
+  height: 15px;
+  background-color: #f1c40f;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #f39c12;
+  animation: blink 1.5s infinite;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #16a085;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: #1abc9c;
+}
+
+.controls button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.slot-info {
+  margin-left: 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slot-info h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.slot-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.slot-info li {
+  margin: 5px 0;
+}
+
+.info-screens {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.screen {
+  background-color: #111;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #ff3333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 8px 12px;
+  width: 80px;
+  text-shadow: 0 0 3px #ff3333, 0 0 8px #ff6666;
+  box-shadow: inset 0 0 8px #000;
+}
+
+.screen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen-label {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Estilo general del footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo en el centro */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Enlaces en el footer */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-bottom: 70px;
+}

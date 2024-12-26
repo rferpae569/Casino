@@ -1,0 +1,184 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Estilo del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 70px;
+}
+
+.header .logo img {
+  width: 100px;
+  height: auto; 
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-top: 70px;
+}
+
+/* Estilos generales del contenedor */
+.container {
+  background-image: url("../../assets/FondoInicio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos del contenedor de terminos*/
+.terminos-container {
+  background-color: #0d1f2d;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* Títulos */
+.terminos-container h2,
+.terminos-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #3399ff;
+  padding-bottom: 5px;
+}
+
+/* Estilo del texto */
+.terminos-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Efecto de luces LED alrededor del contenedor */
+.terminos-container::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: linear-gradient(45deg, #3399ff, #00ccff, #3399ff, #00ccff);
+  background-size: 400% 400%;
+  border-radius: 10px;
+  animation: ledGlow 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Animación de las luces LED */
+@keyframes ledGlow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 400%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+  .terminos-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .terminos-container h2,
+  .terminos-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .terminos-container p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilo general del footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo en el centro */
+.footer-logo img {
+  width: 150px;
+  height: auto; 
+}
+
+/* Enlaces en el footer */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-bottom: 70px;
+}

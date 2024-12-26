@@ -1,0 +1,92 @@
+<!--Cabecera-->
+<header class="header">
+  <div class="logo">
+    <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
+  </div>
+  <nav class="nav-links">
+    <a routerLink="">Inicio</a>
+    <a routerLink="/Eleccion">Juegos</a>
+    <a routerLink="/Contacto">Contacto</a>
+  </nav>
+</header>
+<!--Fin Cabecera-->
+
+<div class="tragaperras-container">
+  <div class="slot-machine-wrapper">
+    <!-- Máquina Tragaperras -->
+    <div class="slot-machine">
+      <div class="top-decoration">
+        <h1 class="title">Máquina Tragaperras</h1>
+      </div>
+      <div class="slots">
+        <div class="slot">
+          <div class="symbol">{{ displayedSlots[0] }}</div>
+        </div>
+        <div class="slot">
+          <div class="symbol">{{ displayedSlots[1] }}</div>
+        </div>
+        <div class="slot">
+          <div class="symbol">{{ displayedSlots[2] }}</div>
+        </div>
+      </div>
+      <div class="bottom-decoration">
+        <div class="lights">
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+          <div class="light"></div>
+        </div>
+        <div class="info-screens">
+          <div class="screen-container">
+            <div class="screen-label">Ganadas</div>
+            <div class="screen">{{ rewardCredits }}</div>
+          </div>
+          <div class="screen-container">
+            <div class="screen-label">Créditos</div>
+            <div class="screen">{{ credits }}</div>
+          </div>
+          <div class="screen-container">
+            <div class="screen-label">Apuesta</div>
+            <div class="screen">{{ currentBet }}</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button (click)="spinSlots(1)" [disabled]="credits < 1 || isSpinning">
+            Apostar 1 Crédito
+          </button>
+          <button (click)="spinSlots(3)" [disabled]="credits < 3 || isSpinning">
+            Apostar 3 Créditos
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Panel Derecho -->
+    <div class="slot-info">
+      <h2>Premios</h2>
+      <ul>
+        <li>🍒🍒🍒 - 10 créditos</li>
+        <li>🍋🍋🍋 - 20 créditos</li>
+        <li>🍊🍊🍊 - 30 créditos</li>
+        <li>🍇🍇🍇 - 40 créditos</li>
+        <li>🍉🍉🍉 - 50 créditos</li>
+        <li>⭐⭐⭐ - 100 créditos</li>
+        <li>💰💰💰 - 200 créditos</li>
+        <li>7️⃣7️⃣7️⃣ - 500 créditos</li>
+      </ul>
+      <h3>Créditos: {{ credits }}</h3>
+    </div>
+  </div>
+</div>
+
+<!--Footer-->
+<footer class="footer">
+  <div class="footer-logo">
+    <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
+  </div>
+  <div class="footer-links">
+    <a routerLink="/AvisoLegal">Aviso Legal</a>
+    <a routerLink="/PoliticaPrivacidad">Política de Privacidad</a>
+    <a routerLink="/TerminosCondiciones">Términos y Condiciones</a>
+  </div>
+</footer>
+<!--Fin Footer-->
