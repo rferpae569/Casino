@@ -1,0 +1,301 @@
+/* Estilo del Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 70px;
+}
+
+.header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-top: 70px;
+}
+
+/* Ruleta basada en imagen */
+.roulette-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../../assets/FondoJuegos.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.roulette-wheel {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: url("../../../assets/png-clipart-casino-roulette-casino-roulette.png")
+    no-repeat center center;
+  background-size: cover;
+  border: 12px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  transition: transform 3s cubic-bezier(0.33, 1, 0.68, 1);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.center {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #500 20%, #300 100%);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.center::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.bets {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.bets button,
+.bet-options button {
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #777;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.spin-button {
+  padding: 15px 30px;
+  background-color: #ffd700;
+  border: 3px solid #b36b00;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8),
+    0px 0px 30px rgba(255, 215, 0, 0.5);
+  margin-top: 30px;
+  transform-origin: center;
+}
+
+.spin-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px rgba(255, 215, 0, 1),
+    0px 0px 40px rgba(255, 215, 0, 0.6);
+}
+
+.spin-button:active {
+  transform: scale(1);
+  box-shadow: inset 0px 0px 15px rgba(255, 215, 0, 0.8);
+}
+
+/* Estilos generales de la mesa */
+.betting-table {
+  background-color: #064635;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-title {
+  font-family: "Georgia", serif;
+  font-size: 24px;
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.table-container {
+  border: 5px solid #ffd700;
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #064635, #052e2a);
+}
+
+/* Numeros de la mesa */
+.bets {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.bets button {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  border: 2px solid #000;
+}
+
+.bets button.red {
+  background-color: #b20000;
+  border: 2px solid darkred;
+}
+
+.bets button.black {
+  background-color: #000;
+  border: 2px solid gray;
+}
+
+.bets button.selected {
+  border: 3px solid #ffd700;
+  box-shadow: 0px 0px 5px #ffd700;
+}
+
+/* Opciones de apuestas (Rojo, Negro, Pares, Impares) */
+.bet-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.color-options,
+.parity-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bet-options button {
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bet-options button.red {
+  background-color: #b20000;
+  border: 2px solid darkred;
+}
+
+.bet-options button.black {
+  background-color: #000;
+  border: 2px solid gray;
+}
+
+.bet-options button.selected {
+  border: 3px solid #ffd700;
+  box-shadow: 0px 0px 5px #ffd700;
+}
+
+/* Sombras y transiciones */
+.bets button:hover,
+.bet-options button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Estilo para el resultado y mensaje */
+.resultado-mensaje {
+  font-weight: bold;
+}
+
+.resultado {
+  font-weight: bold;
+}
+
+.mensaje {
+  font-weight: bold;
+}
+
+/* Estilo general del footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo en el centro */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Enlaces en el footer */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-bottom: 70px;
+}
