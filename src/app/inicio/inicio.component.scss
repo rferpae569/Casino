@@ -154,3 +154,75 @@ form button:hover {
 body {
   margin-bottom: 70px;
 }
+
+/* Estilo del overlay */
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+/* Estilo del banner de cookies */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 9999;
+}
+
+
+.cookie-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.cookie-buttons {
+  margin-top: 10px;
+}
+
+.cookie-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  border: 2px solid #3e8e41;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px #4CAF50, 0 0 12px #4CAF50;
+  transition: all 0.3s ease-in-out;
+}
+
+.cookie-buttons button:hover {
+  background-color: #45a049;
+  box-shadow: 0 0 15px #00FF00, 0 0 25px #00FF00;
+  transform: scale(1.05);
+}
+
+.cookie-buttons button:last-child {
+  background-color: #f44336;
+  border: 2px solid #e53935;
+  box-shadow: 0 0 8px #f44336, 0 0 12px #f44336;
+}
+
+.cookie-buttons button:last-child:hover {
+  background-color: #e53935;
+  box-shadow: 0 0 15px #FF6347, 0 0 25px #FF6347;
+  transform: scale(1.05);
+}
+
+
+
+

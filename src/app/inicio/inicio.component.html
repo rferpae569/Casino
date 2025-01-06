@@ -1,3 +1,16 @@
+<!-- Overlay para bloquear la interacción -->
+<div *ngIf="showCookieBanner" class="cookie-overlay"></div>
+
+<!-- Banner de Cookies -->
+<div class="cookie-banner" *ngIf="showCookieBanner">
+  <div class="cookie-content">
+    <p>Usamos cookies para mejorar tu experiencia en el sitio. Al aceptar, consientes el uso de cookies según nuestra <a routerLink="/PoliticaPrivacidad">Política de Privacidad</a>.</p>
+    <div class="cookie-buttons">
+      <button (click)="acceptCookies()">Aceptar</button>
+      <button (click)="declineCookies()">Rechazar</button>
+    </div>
+  </div>
+</div>
 <!--Cabecera-->
 <header class="header">
   <div class="logo">
