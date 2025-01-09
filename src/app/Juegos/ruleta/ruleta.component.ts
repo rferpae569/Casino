@@ -24,7 +24,8 @@ export class RuletaComponent  {
   bets: { [key: string]: (string | number)[] | string | null } = {
     number: [], // Arreglo para números apostados
     color: null,
-    parity: null
+    parity: null,
+    range: null,
   };
 
   // Método para girar la ruleta
@@ -52,7 +53,6 @@ export class RuletaComponent  {
   // Método para colocar las apuestas
   placeBet(type: string, value: string | number) {
     if (type === 'number') {
-      // Si 'number' es un arreglo, gestionamos los números apostados
       if (Array.isArray(this.bets['number'])) {
         if (this.bets['number'].includes(value)) {
           // Si el número ya está en la apuesta, lo eliminamos
@@ -62,13 +62,11 @@ export class RuletaComponent  {
           this.bets['number'] = [...this.bets['number'], value];
         }
       }
-    } else if (type === 'color' || type === 'parity') {
-      // Para 'color' o 'parity', podemos poner o quitar la apuesta
-      // Verificamos que el valor sea una cadena (ya que 'color' y 'parity' son solo cadenas)
+    } else if (type === 'color' || type === 'parity' || type === 'range') {
       if (this.bets[type] === value) {
         this.bets[type] = null;
       } else {
-        this.bets[type] = value as string; // Forzamos el tipo a 'string' si es 'color' o 'parity'
+        this.bets[type] = value as string; // Forzamos el tipo a 'string' si es 'color', 'parity' o 'range'
       }
     }
   }
@@ -76,20 +74,21 @@ export class RuletaComponent  {
   // Verifica si una apuesta está seleccionada
   isBetSelected(type: string, value: string | number): boolean {
     if (type === 'number') {
-      // Si 'number' es un arreglo, comprobamos si contiene el valor
       return Array.isArray(this.bets['number']) && this.bets['number'].includes(value);
     }
-    // Para 'color' o 'parity', devolvemos si coincide con el valor
     return this.bets[type] === value;
   }
 
   // Verifica las apuestas y muestra el resultado
   checkBets() {
     if (!this.result) return; // Asegurarnos de que result no sea null
-
+  
     const color = this.colors.red.includes(this.result) ? 'red' : this.colors.black.includes(this.result) ? 'black' : null;
     const parity = parseInt(this.result) % 2 === 0 ? 'even' : 'odd';
-
+    const isInFirst12 = parseInt(this.result) >= 1 && parseInt(this.result) <= 12;
+    const isInSecond12 = parseInt(this.result) >= 13 && parseInt(this.result) <= 24;
+    const isInThird12 = parseInt(this.result) >= 25 && parseInt(this.result) <= 36;
+  
     // Verificar si el resultado está en los números apostados
     if (this.bets['number'] && Array.isArray(this.bets['number']) && this.bets['number'].includes(this.result)) {
       this.message = '¡Ganaste apostando al número!';
@@ -97,8 +96,14 @@ export class RuletaComponent  {
       this.message = '¡Ganaste apostando al color!';
     } else if (this.bets['parity'] === parity) {
       this.message = '¡Ganaste apostando a pares/impares!';
+    } else if (this.bets['range'] === 'first12' && isInFirst12) {
+      this.message = '¡Ganaste apostando a 0 - 12!';
+    } else if (this.bets['range'] === 'second12' && isInSecond12) {
+      this.message = '¡Ganaste apostando a 13 - 24!';
+    } else if (this.bets['range'] === 'third12' && isInThird12) {
+      this.message = '¡Ganaste apostando a 25 - 36!';
     } else {
-      this.message = 'No hubo ganancias esta vez.';
+      this.message = 'No hubo ganancias.';
     }
   }
 

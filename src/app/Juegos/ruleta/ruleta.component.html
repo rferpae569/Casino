@@ -37,6 +37,26 @@
       </div>
 
       <div class="bet-options">
+        <div class="range-options">
+          <button
+            (click)="placeBet('range', 'first12')"
+            [class.selected]="isBetSelected('range', 'first12')"
+          >
+            0 - 12
+          </button>
+          <button
+            (click)="placeBet('range', 'second12')"
+            [class.selected]="isBetSelected('range', 'second12')"
+          >
+            13 - 24
+          </button>
+          <button
+            (click)="placeBet('range', 'third12')"
+            [class.selected]="isBetSelected('range', 'third12')"
+          >
+            25 - 36
+          </button>
+        </div>
         <div class="color-options">
           <button
             (click)="placeBet('color', 'red')"
@@ -69,11 +89,17 @@
         </div>
       </div>
     </div>
-    <button class="spin-button" (click)="spin()">Girar Ruleta</button>
-    <p *ngIf="isSpinComplete" class="resultado">
-      El resultado es: {{ result }}
-    </p>
-    <p *ngIf="isSpinComplete" class="mensaje">{{ message }}</p>
+    <div class="spin-section">
+        <p *ngIf="isSpinComplete" class="resultado">El resultado es: {{ result }}</p>
+        <button
+          class="spin-button"
+          [ngClass]="{ 'center-button': isSpinComplete }"
+          (click)="spin()"
+        >
+          Girar Ruleta
+        </button>
+        <p *ngIf="isSpinComplete" class="mensaje">{{ message }}</p>
+      </div>      
   </div>
 </div>
 <!--Fin de contenedor-->

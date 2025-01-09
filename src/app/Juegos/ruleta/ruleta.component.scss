@@ -196,6 +196,38 @@ body {
   box-shadow: 0px 0px 5px #ffd700;
 }
 
+/* Opciones de rango (Primeros 12, Segundos 12, Terceros 12) */
+.range-options {
+  display: flex;
+  gap: 20px; 
+  margin-top: 15px; 
+  margin-bottom: 20px;
+}
+
+.range-options button {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #333;;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.range-options button.selected {
+  border: 3px solid #ffd700;
+  box-shadow: 0px 0px 5px #ffd700;
+}
+
+.range-options button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+
 /* Opciones de apuestas (Rojo, Negro, Pares, Impares) */
 .bet-options {
   display: flex;
@@ -254,6 +286,26 @@ body {
 
 .mensaje {
   font-weight: bold;
+}
+
+.spin-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.spin-section .resultado,
+.spin-section .mensaje {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 18px;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
+.spin-section .spin-button {
+  margin: 0 20px;
 }
 
 /* Estilo general del footer */
