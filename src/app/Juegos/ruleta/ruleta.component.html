@@ -35,7 +35,12 @@
           {{ num }}
         </button>
       </div>
-
+      <!-- Indicador de créditos -->
+      <div class="credits-indicator">
+        <p>
+          Créditos: <strong>{{ credits }}</strong>
+        </p>
+      </div>
       <div class="bet-options">
         <div class="range-options">
           <button
@@ -90,16 +95,18 @@
       </div>
     </div>
     <div class="spin-section">
-        <p *ngIf="isSpinComplete" class="resultado">El resultado es: {{ result }}</p>
-        <button
-          class="spin-button"
-          [ngClass]="{ 'center-button': isSpinComplete }"
-          (click)="spin()"
-        >
-          Girar Ruleta
-        </button>
-        <p *ngIf="isSpinComplete" class="mensaje">{{ message }}</p>
-      </div>      
+      <p *ngIf="isSpinComplete" class="resultado">
+        El resultado es: {{ result }}
+      </p>
+      <button
+        class="spin-button"
+        [ngClass]="{ 'center-button': isSpinComplete }"
+        (click)="spin()"
+      >
+        Girar Ruleta
+      </button>
+      <p *ngIf="isSpinComplete" class="mensaje">{{ message }}</p>
+    </div>
   </div>
 </div>
 <!--Fin de contenedor-->

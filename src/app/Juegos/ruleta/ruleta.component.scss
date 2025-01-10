@@ -308,6 +308,20 @@ body {
   margin: 0 20px;
 }
 
+.credits-indicator {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+  margin-top: -50px;
+}
+
+.credits-indicator strong {
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
 /* Estilo general del footer */
 .footer {
   display: flex;
