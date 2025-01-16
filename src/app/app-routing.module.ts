@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
+import { RegistroComponent } from './registro/registro.component';
 import { RuletaComponent } from './Juegos/ruleta/ruleta.component';
 import { TragaperrasComponent } from './Juegos/tragaperras/tragaperras.component';
 import { EleccionComponent } from './eleccion/eleccion.component';
@@ -11,6 +12,7 @@ import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-co
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
+  { path: 'Registro', component:RegistroComponent},
   { path: 'Eleccion',component:EleccionComponent},
   { path: 'Contacto', component: ContactoComponent},
   { path: 'Ruleta', component:RuletaComponent},
