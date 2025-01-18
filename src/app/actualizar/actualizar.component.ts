@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ServicioService } from '../servicio.service';
+import { Usuarios } from '../model/usuarios';
 
 @Component({
-  selector: 'app-eleccion',
-  templateUrl: './eleccion.component.html',
-  styleUrls: ['./eleccion.component.scss']
+  selector: 'app-actualizar',
+  templateUrl: './actualizar.component.html',
+  styleUrls: ['./actualizar.component.scss']
 })
-export class EleccionComponent implements OnInit {
+export class ActualizarComponent implements OnInit {
 
   usuario: string | null = null;
   dropdownVisible: boolean = false;
@@ -32,5 +35,5 @@ export class EleccionComponent implements OnInit {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');
   }
-
 }
+

@@ -13,6 +13,8 @@ import { TerminosCondicionesComponent } from './terminos-condiciones/terminos-co
 import { TragaperrasComponent } from './Juegos/tragaperras/tragaperras.component';
 import { EleccionComponent } from './eleccion/eleccion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { ActualizarComponent } from './actualizar/actualizar.component';
+import { BorrarComponent } from './borrar/borrar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,8 @@ import { RegistroComponent } from './registro/registro.component';
     TragaperrasComponent,
     EleccionComponent,
     RegistroComponent,
+    ActualizarComponent,
+    BorrarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 export interface Usuarios {
-    Id:              number;
+    Id?:              number;
     Usuario:         string;
     Passwrd:         string;
-    FechaNacimiento: Date;
+    FechaNacimiento?: Date;
 }

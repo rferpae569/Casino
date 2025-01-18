@@ -67,11 +67,12 @@ export class InicioComponent implements OnInit, AfterViewInit  {
     this.servicioService.login(this.newlogin).subscribe((data: any[]) => {
       if (data && data.length > 0) {
         const sessionData = {
-          correo: data[0].Correo, // Cambiado para usar Correo
-          expiration: new Date().getTime() + 24 * 60 * 60 * 1000, // Expira en 1 día
+          correo: data[0].Correo,
+          usuario: data[0].Usuario,
+          expiration: new Date().getTime() + 24 * 60 * 60 * 1000,
         };
         localStorage.setItem('session', JSON.stringify(sessionData));
-  
+    
         this.isLoggedIn = true;
         this.router.navigateByUrl('Eleccion');
       } else {

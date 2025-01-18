@@ -20,6 +20,8 @@ export class RegistroComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
       fechaNacimiento: ['', [Validators.required, this.edadMayorDe18]],
       correo: ['', [Validators.required, Validators.email]],
+      mayorEdad: [false, [Validators.requiredTrue]],
+      aceptarPoliticas: [false, [Validators.requiredTrue]],
     });
   }
 
@@ -82,4 +84,3 @@ export class RegistroComponent {
     }
   }
 }
-
