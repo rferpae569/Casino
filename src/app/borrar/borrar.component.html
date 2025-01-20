@@ -19,11 +19,14 @@
   <!--Fin Cabecera-->
   <!--Contenedor-->
   <div class="actualizar-container">
-    <form>
+    <form (ngSubmit)="enviarFormulario()" [formGroup]="borrarForm">
+      <h2 style="text-align: center;">Lamentamos que se vaya, le echaremos de menos.</h2>
+      <h3 style="text-align: center;"> Introduzca sus datos para poder eliminar su cuenta.</h3>
         <div class="form-group">
             <label for="email">Correo Electrónico:</label>
             <input
               id="email"
+              formControlName="correo"
               type="email"
               class="form-control"
               placeholder="Actualice su correo electrónico"
@@ -34,6 +37,7 @@
         <label for="name">Nombre de usuario:</label>
         <input
           id="name"
+          formControlName="usuario"
           type="text"
           class="form-control"
           placeholder="Actualice su nombre de usuario"
@@ -45,6 +49,7 @@
         <label for="password">Contraseña:</label>
         <input
           id="password"
+          formControlName="password"
           type="password"
           class="form-control"
           placeholder="Actualice su contraseña"
@@ -62,7 +67,7 @@
           required
         />
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-primary" [disabled]="borrarForm.invalid">
         Borrar
       </button>
     </form>    

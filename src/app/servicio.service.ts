@@ -35,7 +35,7 @@ export class ServicioService {
     );
   }
 
-  //Esta funcion sirve para insertar la usuario en la base de datos.
+  //Esta funcion sirve para insertar al usuario en la base de datos.
   InsertarUsuario(nuevo: Usuarios, correo: string): Observable<any> {
     const payload = {
       Usuario: nuevo.Usuario,
@@ -46,6 +46,24 @@ export class ServicioService {
 
     return this.http.post<any>(
       `${this.url}usuarios/insertarusuario.php`,
+      payload,
+      {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+      }
+    );
+  }
+
+  //Esta funcion sirve para borrar al usuario en la base de datos.
+  BorrarUsuario(nuevo: Usuarios, correo: string): Observable<any> {
+    const payload = {
+      Usuario: nuevo.Usuario,
+      Passwrd: nuevo.Passwrd,
+      FechaNacimiento: nuevo.FechaNacimiento,
+      Correo: correo,
+    };
+
+    return this.http.post<any>(
+      `${this.url}usuarios/borrarusuario.php`,
       payload,
       {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
