@@ -1,19 +1,28 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms'; // Importar correctamente
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms'; // Importar correctamente
 import { Usuarios } from '../model/usuarios';
 import { ServicioService } from '../servicio.service';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss']
+  styleUrls: ['./registro.component.scss'],
 })
 export class RegistroComponent {
   registroForm: FormGroup; // Formulario reactivo
   mensajeExito: string = '';
   mensajeError: string = '';
 
-  constructor(private fb: FormBuilder, private servicioService: ServicioService) {
+  constructor(
+    private fb: FormBuilder,
+    private servicioService: ServicioService
+  ) {
     // Crear el formulario reactivo con validaciones
     this.registroForm = this.fb.group({
       usuario: ['', [Validators.required]],
@@ -37,9 +46,12 @@ export class RegistroComponent {
     const fechaNacimientoDate = new Date(fechaNacimiento);
     let edad = fechaActual.getFullYear() - fechaNacimientoDate.getFullYear(); // Cambiar const a let para poder modificar la variable
     const mes = fechaActual.getMonth() - fechaNacimientoDate.getMonth();
-    
+
     // Ajustar si no ha cumplido años este año
-    if (mes < 0 || (mes === 0 && fechaActual.getDate() < fechaNacimientoDate.getDate())) {
+    if (
+      mes < 0 ||
+      (mes === 0 && fechaActual.getDate() < fechaNacimientoDate.getDate())
+    ) {
       edad--;
     }
 
@@ -55,7 +67,10 @@ export class RegistroComponent {
     console.log('Formulario enviado.');
 
     if (this.registroForm.valid) {
-      console.log('Formulario válido. Datos del formulario:', this.registroForm.value);
+      console.log(
+        'Formulario válido. Datos del formulario:',
+        this.registroForm.value
+      );
 
       const nuevoUsuario: Usuarios = {
         Id: 0, // No se envía, el servidor lo genera automáticamente

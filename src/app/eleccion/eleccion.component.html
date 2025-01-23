@@ -9,9 +9,9 @@
     <a routerLink="/Contacto">Contacto</a>
     <!-- Área que contiene el saludo y el desplegable de sesión -->
     <div class="user-greeting" (click)="toggleDropdown()">
-    <span *ngIf="usuario">Hola, {{ usuario }}</span>
-    <div [ngClass]="{ 'show': dropdownVisible }" class="dropdown">
-      <span class="logout-button" (click)="logout()">Cerrar sesión</span>
+      <span *ngIf="usuario">Hola, {{ usuario }}</span>
+      <div [ngClass]="{ show: dropdownVisible }" class="dropdown">
+        <span class="logout-button" (click)="logout()">Cerrar sesión</span>
       </div>
     </div>
   </nav>

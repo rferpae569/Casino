@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-eleccion',
   templateUrl: './eleccion.component.html',
-  styleUrls: ['./eleccion.component.scss']
+  styleUrls: ['./eleccion.component.scss'],
 })
 export class EleccionComponent implements OnInit {
-
   usuario: string | null = null;
   dropdownVisible: boolean = false;
 
@@ -23,8 +22,8 @@ export class EleccionComponent implements OnInit {
     }
   }
 
-   // Función para alternar la visibilidad del menú desplegable
-   toggleDropdown() {
+  // Función para alternar la visibilidad del menú desplegable
+  toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
@@ -32,5 +31,4 @@ export class EleccionComponent implements OnInit {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');
   }
-
 }

@@ -1,73 +1,71 @@
 <!--Cabecera-->
 <header class="header">
-    <div class="logo">
-      <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
-    </div>
-    <nav class="nav-links">
-      <a routerLink="/Eleccion">Juegos</a>
-      <a routerLink="/Borrar">Borrar Cuenta</a>
-      <a routerLink="/Contacto">Contacto</a>
-      <!-- Área que contiene el saludo y el desplegable de sesión -->
+  <div class="logo">
+    <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
+  </div>
+  <nav class="nav-links">
+    <a routerLink="/Eleccion">Juegos</a>
+    <a routerLink="/Borrar">Borrar Cuenta</a>
+    <a routerLink="/Contacto">Contacto</a>
+    <!-- Área que contiene el saludo y el desplegable de sesión -->
     <div class="user-greeting" (click)="toggleDropdown()">
       <span *ngIf="usuario">Hola, {{ usuario }}</span>
-      <div [ngClass]="{ 'show': dropdownVisible }" class="dropdown">
+      <div [ngClass]="{ show: dropdownVisible }" class="dropdown">
         <span class="logout-button" (click)="logout()">Cerrar sesión</span>
-        </div>
       </div>
-    </nav>
-  </header>
-  <!--Fin Cabecera-->
-  <!--Contenedor-->
-  <div class="actualizar-container">
-    <form>
-      <h3 style="text-align: center;">Actualice los datos correspondientes.</h3>
-      <div class="form-group">
-        <label for="name">Nombre de usuario:</label>
-        <input
-          id="name"
-          type="text"
-          class="form-control"
-          placeholder="Actualice su nombre de usuario"
-          required
-        />
-      </div>
-    
-      <div class="form-group">
-        <label for="password">Contraseña:</label>
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          placeholder="Actualice su contraseña"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="email">Correo Electrónico:</label>
-        <input
-          id="email"
-          type="email"
-          class="form-control"
-          placeholder="Actualice su correo electrónico"
-          required
-        />
-      </div>
-    
-      <button type="submit" class="btn btn-primary">
-        Actualizar
-      </button>
-    </form>    
-  </div>
-  <!--Fin Contenedor-->
-  <!--Footer-->
+    </div>
+  </nav>
+</header>
+<!--Fin Cabecera-->
+<!--Contenedor-->
+<div class="actualizar-container">
+  <form>
+    <h3 style="text-align: center">Actualice los datos correspondientes.</h3>
+    <div class="form-group">
+      <label for="name">Nombre de usuario:</label>
+      <input
+        id="name"
+        type="text"
+        class="form-control"
+        placeholder="Actualice su nombre de usuario"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Contraseña:</label>
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        placeholder="Actualice su contraseña"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Correo Electrónico:</label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        placeholder="Actualice su correo electrónico"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+  </form>
+</div>
+<!--Fin Contenedor-->
+<!--Footer-->
 <footer class="footer">
-    <div class="footer-logo">
-      <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
-    </div>
-    <div class="footer-links">
-      <a routerLink="/AvisoLegal">Aviso Legal</a>
-      <a routerLink="/PoliticaPrivacidad">Política de Privacidad</a>
-      <a routerLink="/TerminosCondiciones">Términos y Condiciones</a>
-    </div>
-  </footer>
-  <!--Fin Footer-->
+  <div class="footer-logo">
+    <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
+  </div>
+  <div class="footer-links">
+    <a routerLink="/AvisoLegal">Aviso Legal</a>
+    <a routerLink="/PoliticaPrivacidad">Política de Privacidad</a>
+    <a routerLink="/TerminosCondiciones">Términos y Condiciones</a>
+  </div>
+</footer>
+<!--Fin Footer-->

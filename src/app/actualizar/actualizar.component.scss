@@ -1,41 +1,41 @@
 /* Estilo del Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
-    background: rgba(26, 26, 46, 0.95);
-    color: white;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    height: 70px;
-  }
-  
-  .header .logo img {
-    width: 100px;
-    height: auto; 
-  }
-  
-  .nav-links {
-    display: flex;
-    margin-right: 100px;
-    gap: 30px;
-  }
-  
-  .nav-links a {
-    color: #0fbcf9;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #00ffff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 70px;
+}
 
-  /* Estilo para el área de bienvenida del usuario */
+.header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+
+/* Estilo para el área de bienvenida del usuario */
 .user-greeting {
   color: #0fbcf9;
   font-size: 18px;
@@ -88,132 +88,132 @@
 .dropdown .logout-button:hover {
   background-color: #c0392b;
 }
-  
-  body {
-    margin-top: 70px;
-  }
 
-  /*Estlo contenedor login*/
+body {
+  margin-top: 70px;
+}
+
+/*Estlo contenedor login*/
 .actualizar-container {
-    height: 100vh;
-    width: 100vw;
-    background-image: url("../../assets/FondoFormulario.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0;
-    gap: 20px;
-  }
-  
-  form {
-    background: linear-gradient(145deg, #1a1a2e, #16213e);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(0, 153, 255, 0.5);
-    border-radius: 20px;
-    padding: 30px;
-    color: #fff;
-    width: 500px;
-    animation: glow 1.5s infinite alternate;
-    margin: 0 auto;
-  }
-  
-  /* Animación para efecto LED */
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3),
-        0 0 60px rgba(0, 153, 255, 0.5);
-    }
-    to {
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.5),
-        0 0 70px rgba(0, 255, 255, 0.7);
-    }
-  }
-  
-  /* Campos del formulario */
-  form input,
-  form textarea,
-  form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  form input:focus,
-  form textarea:focus,
-  form select:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 153, 255, 0.7);
-  }
-  
-  form button {
-    background-color: #0fbcf9;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  form button:hover {
-    background-color: #0c9afc;
-    box-shadow: 0 0 15px rgba(0, 153, 255, 0.9);
-  } 
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../assets/FondoFormulario.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+  gap: 20px;
+}
 
-  /* Estilo general del footer */
+form {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(0, 153, 255, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  color: #fff;
+  width: 500px;
+  animation: glow 1.5s infinite alternate;
+  margin: 0 auto;
+}
+
+/* Animación para efecto LED */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3),
+      0 0 60px rgba(0, 153, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5),
+      0 0 70px rgba(0, 255, 255, 0.7);
+  }
+}
+
+/* Campos del formulario */
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.7);
+}
+
+form button {
+  background-color: #0fbcf9;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+form button:hover {
+  background-color: #0c9afc;
+  box-shadow: 0 0 15px rgba(0, 153, 255, 0.9);
+}
+
+/* Estilo general del footer */
 .footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(26, 26, 46, 0.95);
-    color: white;
-    padding: 20px 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Logo en el centro */
-  .footer-logo img {
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-  
-  /* Enlaces en el footer */
-  .footer-links {
-    display: flex;
-    gap: 30px;
-    margin-top: 10px;
-  }
-  
-  .footer-links a {
-    color: #0fbcf9;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    color: #00ffff;
-  }
-  
-  body {
-    margin-bottom: 70px;
-  }
-  
-  .footer-logo img {
-    width: 150px;
-    height: auto; 
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(26, 26, 46, 0.95);
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo en el centro */
+.footer-logo img {
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Enlaces en el footer */
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+body {
+  margin-bottom: 70px;
+}
+
+.footer-logo img {
+  width: 150px;
+  height: auto;
+}

@@ -7,10 +7,9 @@ import { Usuarios } from '../model/usuarios';
 @Component({
   selector: 'app-actualizar',
   templateUrl: './actualizar.component.html',
-  styleUrls: ['./actualizar.component.scss']
+  styleUrls: ['./actualizar.component.scss'],
 })
 export class ActualizarComponent implements OnInit {
-
   usuario: string | null = null;
   dropdownVisible: boolean = false;
 
@@ -26,8 +25,8 @@ export class ActualizarComponent implements OnInit {
     }
   }
 
-   // Función para alternar la visibilidad del menú desplegable
-   toggleDropdown() {
+  // Función para alternar la visibilidad del menú desplegable
+  toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
@@ -36,4 +35,3 @@ export class ActualizarComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 }
-

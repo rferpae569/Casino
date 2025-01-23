@@ -4,9 +4,23 @@
     <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
   </div>
   <nav class="nav-links">
-    <a routerLink="">Inicio</a>
-    <a routerLink="/Registro">Registrate</a>
-    <a routerLink="/Contacto">Contacto</a>
+    <!-- Mostrar "Inicio" y "Registrate" solo si no hay sesión -->
+    <a routerLink="" *ngIf="!usuario">Inicio</a>
+    <a routerLink="/registro" *ngIf="!usuario">Registrate</a>
+    
+    <!-- Mostrar los demás enlaces solo si hay sesión -->
+    <a routerLink="/Eleccion" *ngIf="usuario">Juegos</a>
+    <a routerLink="/Actualizar" *ngIf="usuario">Actualizar cuenta</a>
+    <a routerLink="/Borrar" *ngIf="usuario">Borrar cuenta</a>
+    <a routerLink="/Contacto" *ngIf="usuario">Contacto</a>
+    
+    <!-- Mostrar el saludo solo si el usuario está logueado -->
+    <div *ngIf="usuario" class="user-greeting" (click)="toggleDropdown()">
+      <span>Hola, {{ usuario }}</span>
+      <div [ngClass]="{ show: dropdownVisible }" class="dropdown">
+        <span class="logout-button" (click)="logout()">Cerrar sesión</span>
+      </div>
+    </div>
   </nav>
 </header>
 <!--Fin Cabecera-->
