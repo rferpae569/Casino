@@ -168,6 +168,15 @@ form button:hover {
   box-shadow: 0 0 15px rgba(0, 153, 255, 0.9);
 }
 
+input[disabled],
+textarea[disabled] {
+  background-color: #fff !important;
+  color: #000 !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+  border: 1px solid #ced4da;
+}
+
 /* Estilo general del footer */
 .footer {
   display: flex;

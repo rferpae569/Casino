@@ -10,22 +10,38 @@ import { Usuarios } from '../model/usuarios';
   styleUrls: ['./actualizar.component.scss'],
 })
 export class ActualizarComponent implements OnInit {
+  actualizarForm: FormGroup;
   usuario: string | null = null;
   dropdownVisible: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    private servicioService: ServicioService,
+    private router: Router
+  ) {
+    this.actualizarForm = this.fb.group({
+      Usuario: ['', Validators.required],
+      Passwrd: ['', Validators.required],
+      Correo: ['', [Validators.required, Validators.email]],
+    });
+  }
 
   ngOnInit() {
     const sessionData = localStorage.getItem('session');
     if (sessionData) {
       const parsedData = JSON.parse(sessionData);
       this.usuario = parsedData.usuario;
+  
+      // Inicializa el valor del campo 'Usuario' con el valor de la sesión
+      this.actualizarForm.patchValue({
+        Usuario: this.usuario  // Asignamos el nombre de usuario a la propiedad 'Usuario' en el formulario
+      });
     } else {
       this.router.navigateByUrl('');
     }
   }
+  
 
-  // Función para alternar la visibilidad del menú desplegable
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }
@@ -33,5 +49,21 @@ export class ActualizarComponent implements OnInit {
   logout() {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');
+  }
+
+  actualizarUsuario() {
+    if (this.actualizarForm.valid) {
+      this.servicioService.actualizarUsuario(this.actualizarForm.value).subscribe(
+        (response) => {
+          console.log('Usuario actualizado', response);
+          alert('Datos actualizados correctamente');
+          this.router.navigate(['/Eleccion']);
+        },
+        (error) => {
+          console.error('Error al actualizar usuario', error);
+          alert('Hubo un error al actualizar los datos');
+        }
+      );
+    }
   }
 }

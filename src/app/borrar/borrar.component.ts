@@ -83,6 +83,7 @@ export class BorrarComponent implements OnInit {
           next: (respuesta) => {
             console.log('Respuesta exitosa del servidor:', respuesta);
             this.mensajeExito = 'Usuario eliminado exitosamente.';
+            alert('El usuario ha sido eliminado');
 
             // Eliminar la sesión
             localStorage.removeItem('session');
@@ -95,6 +96,7 @@ export class BorrarComponent implements OnInit {
           },
           error: (error) => {
             console.error('Error en la solicitud al servidor:', error);
+            alert('El usuario no ha podido ser borrado');
             this.mensajeError = 'Hubo un error al eliminar al usuario.';
           },
         });
