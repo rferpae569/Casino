@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Usuarios } from './model/usuarios';
 import { Correo } from './model/correo';
+import { Contacto } from './model/contacto';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,10 @@ export class ServicioService {
 
   getDatosCorreo(): Observable<Correo[]> {
     return this.http.get<Correo[]>(`${this.url}correos/leercorreo.php`);
+  }
+
+  getContacto(): Observable<Contacto[]>{
+    return this.http.get<Contacto[]>(`${this.url}contacto/leercontacto.php`)
   }
 
   login(user: Usuarios): Observable<Usuarios[]> {
@@ -65,6 +70,12 @@ export class ServicioService {
 
   actualizarUsuario(datos: Usuarios): Observable<any> {
     return this.http.post<any>(`${this.url}usuarios/actualizarusuario.php`, datos, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
+  }
+
+  insertarContacto(datos: Contacto): Observable<any> {
+    return this.http.post<any>(`${this.url}contacto/insertarcontacto.php`, datos, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     });
   }

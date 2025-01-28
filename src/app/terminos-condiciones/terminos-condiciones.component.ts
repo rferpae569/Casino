@@ -25,6 +25,7 @@ export class TerminosCondicionesComponent implements OnInit {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
+  //Funcion para cerrar sesion
   logout() {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');

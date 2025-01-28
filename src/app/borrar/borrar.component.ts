@@ -52,6 +52,7 @@ export class BorrarComponent implements OnInit {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
+  //Funcion para cerrar sesion
   logout() {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');

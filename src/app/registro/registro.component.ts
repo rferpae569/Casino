@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  AbstractControl,
-  ValidationErrors,
-} from '@angular/forms'; // Importar correctamente
+import {FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors,} from '@angular/forms';
 import { Usuarios } from '../model/usuarios';
 import { ServicioService } from '../servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -21,7 +16,8 @@ export class RegistroComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioService: ServicioService
+    private servicioService: ServicioService,
+    private router: Router
   ) {
     // Crear el formulario reactivo con validaciones
     this.registroForm = this.fb.group({
@@ -87,6 +83,7 @@ export class RegistroComponent {
           console.log('Respuesta exitosa del servidor:', respuesta);
           this.mensajeExito = 'Usuario registrado exitosamente.';
           this.registroForm.reset();
+          this.router.navigate(['']);
         },
         error: (error) => {
           console.error('Error en la solicitud al servidor:', error);

@@ -46,11 +46,13 @@ export class ActualizarComponent implements OnInit {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
+  //Funcion para cerrar sesion
   logout() {
     localStorage.removeItem('session');
     this.router.navigateByUrl('');
   }
 
+  //Funcion para mandar los datos al servidor
   actualizarUsuario() {
     if (this.actualizarForm.valid) {
       this.servicioService.actualizarUsuario(this.actualizarForm.value).subscribe(
