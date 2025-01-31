@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicioService } from '../servicio.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';  // Agregar estas importaciones
+import { FormGroup, FormControl, Validators } from '@angular/forms';  // Importar estas librerías
 import { Contacto } from '../model/contacto';  // Asegúrate de que el modelo Contacto esté importado
 
 @Component({
@@ -10,7 +10,7 @@ import { Contacto } from '../model/contacto';  // Asegúrate de que el modelo Co
   styleUrls: ['./contacto.component.scss']
 })
 export class ContactoComponent implements OnInit {
-  usuario: string | null = null;
+  usuario: string | null = null;  // El nombre de usuario obtenido desde el sessionStorage
   correo: string = '';
   razon: string = '';
   telefono: string = '';
@@ -19,7 +19,7 @@ export class ContactoComponent implements OnInit {
   mensajeExito: string | null = null;
   mensajeError: string | null = null;
 
-  // Agregar esta línea para usar un FormGroup en lugar de las variables individuales
+  // Usar FormGroup para el formulario
   formularioContacto: FormGroup = new FormGroup({
     correo: new FormControl('', [Validators.required, Validators.email]),
     razon: new FormControl('', [Validators.required]),
@@ -33,18 +33,10 @@ export class ContactoComponent implements OnInit {
     const sessionData = localStorage.getItem('session');
     if (sessionData) {
       const parsedData = JSON.parse(sessionData);
-      this.usuario = parsedData.usuario;
+      this.usuario = parsedData.usuario;  // Almacenamos el nombre de usuario en `usuario`
     } else {
       this.router.navigateByUrl('');
     }
-
-    // Inicializamos el FormGroup
-    this.formularioContacto = new FormGroup({
-      correo: new FormControl('', [Validators.required, Validators.email]),
-      razon: new FormControl('', [Validators.required]),
-      telefono: new FormControl('', [Validators.required]),
-      mensaje: new FormControl('', [Validators.required])
-    });
   }
 
   // Función para alternar la visibilidad del menú desplegable
@@ -64,27 +56,30 @@ export class ContactoComponent implements OnInit {
       this.mensajeError = 'Todos los campos son obligatorios.';
       return;
     }
-  
-    // Obtener el IdUsuario del sessionStorage (si existe)
-    const IdUsuario = this.usuario ? parseInt(this.usuario) : null;
-  
-    // Crear el objeto Contacto
+
+    // Verificar si el nombre de usuario existe
+    const usuario = this.usuario;
+    if (!usuario) {
+      this.mensajeError = 'No se encontró el usuario.';
+      return;
+    }
+
+    // Crear el objeto Contacto para enviar al backend
     const data: Contacto = {
-      id: 0,  // Este id será autogenerado por la base de datos
-      IdUsuario: IdUsuario,  // Id del usuario que lo realiza
-      CorreoUsuario: this.formularioContacto.value.correo,  // Correo del usuario que realiza el contacto
-      Razon: this.formularioContacto.value.razon,
-      Telefono: this.formularioContacto.value.telefono,
-      Mensaje: this.formularioContacto.value.mensaje
+      id: 0,  // El id será autogenerado en la base de datos
+      NombreUsuario: usuario,  // Enviamos el nombre de usuario al backend
+      CorreoUsuario: this.formularioContacto.value.correo,  // El correo del usuario
+      Razon: this.formularioContacto.value.razon,  // Razón del contacto
+      Telefono: this.formularioContacto.value.telefono,  // El teléfono
+      Mensaje: this.formularioContacto.value.mensaje  // El mensaje del usuario
     };
-  
-    // Agregar un console.log para verificar los datos que se están enviando
+
     console.log('Enviando datos:', data);
-  
+
     // Enviar los datos al backend
     this.servicioService.insertarContacto(data).subscribe(
       response => {
-        console.log('Respuesta del backend:', response); // Verifica la respuesta
+        console.log('Respuesta del backend:', response);  // Verificamos la respuesta
         if (response.msg) {
           this.mensajeExito = response.msg;
           this.mensajeError = null;
@@ -93,13 +88,15 @@ export class ContactoComponent implements OnInit {
         }
       },
       error => {
-        console.log('Error al enviar mensaje:', error); // Verifica el error
+        console.log('Error al enviar mensaje:', error);  // Verificamos el error
         this.mensajeError = 'Hubo un error al enviar el mensaje. Intente nuevamente.';
         this.mensajeExito = null;
       }
     );
-  }
-  
 }
+
+}
+
+
 
 

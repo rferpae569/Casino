@@ -4,55 +4,49 @@ header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: *");
 
 $json = file_get_contents('php://input');
-
-// Pasamos los parámetros del JSON
 $params = json_decode($json);
-$razon = $params->Razon; // La razón
-$telefono = $params->Telefono; // El teléfono
-$mensaje = $params->Mensaje; // El mensaje
-$correo = $params->CorreoUsuario; // Aquí usamos 'CorreoUsuario'
 
-// Conexión a la base de datos
+$nombreUsuario = $params->NombreUsuario;  // Nombre de usuario
+$correoUsuario = $params->CorreoUsuario;  // Correo proporcionado en el formulario
+$razon = $params->Razon;  // Razón del contacto
+$telefono = $params->Telefono;  // Teléfono
+$mensaje = $params->Mensaje;  // Mensaje
+
 try {
     $mbd = new PDO('mysql:host=localhost;dbname=casino', "root", "");
     $mbd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $mbd->beginTransaction();
-    
-    // Buscar el idUsuario correspondiente al correo
-    $sentencia = $mbd->prepare("SELECT idUsuario FROM correo WHERE Correo = :Correo");
-    $sentencia->bindParam(':Correo', $correo);  // Correo de la tabla correo
+
+    // Buscar el IdUsuario en la base de datos
+    $sentencia = $mbd->prepare("SELECT id FROM usuarios WHERE Usuario = :nombreUsuario");
+    $sentencia->bindParam(':nombreUsuario', $nombreUsuario);
     $sentencia->execute();
-    
-    $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-    
-    if ($resultado) {
-        // Si se encuentra el correo, obtenemos el idUsuario
-        $idUsuario = $resultado['idUsuario'];
+    $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
 
-        // Insertar en la tabla contacto
-        $sentencia = $mbd->prepare("INSERT INTO contacto (razon, telefono, mensaje, idUsuario, CorreoUsuario) VALUES (:Razon, :Telefono, :Mensaje, :IdUsuario, :CorreoUsuario)");
-        $sentencia->bindParam(':Razon', $razon);
-        $sentencia->bindParam(':Telefono', $telefono);
-        $sentencia->bindParam(':Mensaje', $mensaje);
-        $sentencia->bindParam(':IdUsuario', $idUsuario);
-        $sentencia->bindParam(':CorreoUsuario', $correo);  
-
-        $sentencia->execute();
-        
-        // Confirmar la transacción
-        $mbd->commit();
-        
-        // Respuesta JSON exitosa
-        header('Content-Type: application/json');
-        echo json_encode(array('msg' => 'Contacto registrado exitosamente'));
-    } else {
-        // Si no se encuentra el correo, devolver un error
-        header('Content-Type: application/json');
-        echo json_encode(array('error' => 'Correo no registrado'));
+    if (!$usuario) {
+        echo json_encode(array('error' => 'Usuario no encontrado.'));
+        exit;
     }
-    
-    // Desconexión
+
+    $idUsuario = $usuario['id'];  // ID del usuario registrado en la base de datos
+
+    // Insertar el mensaje con el correo proporcionado en el formulario
+    $sentencia = $mbd->prepare("INSERT INTO contacto (IdUsuario, NombreUsuario, CorreoUsuario, Razon, Telefono, Mensaje) 
+                                VALUES (:idUsuario, :nombreUsuario, :correoUsuario, :razon, :telefono, :mensaje)");
+
+    $sentencia->bindParam(':idUsuario', $idUsuario);
+    $sentencia->bindParam(':nombreUsuario', $nombreUsuario);
+    $sentencia->bindParam(':correoUsuario', $correoUsuario);  // Se usa el correo del formulario, no el de la BD
+    $sentencia->bindParam(':razon', $razon);
+    $sentencia->bindParam(':telefono', $telefono);
+    $sentencia->bindParam(':mensaje', $mensaje);
+
+    $sentencia->execute();
+
+    // Respuesta JSON exitosa
+    header('Content-Type: application/json');
+    echo json_encode(array('msg' => 'Mensaje enviado correctamente.'));
+
+    // Cerrar conexión
     $mbd = null;
 } catch (PDOException $e) {
     // Manejo de errores
