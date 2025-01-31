@@ -30,6 +30,11 @@ try {
 
     $Id = $resultado['id']; // Ahora obtenemos el Id del usuario
 
+    // Eliminar el contacto asociado al usuario (Referencia a IdUsuario)
+    $sentencia = $mbd->prepare("DELETE FROM contacto WHERE IdUsuario = :IdUsuario");
+    $sentencia->bindParam(':IdUsuario', $Id);
+    $sentencia->execute();
+
     // Eliminar el correo asociado al usuario (Referencia a IdUsuario)
     $sentencia = $mbd->prepare("DELETE FROM correo WHERE IdUsuario = :IdUsuario");
     $sentencia->bindParam(':IdUsuario', $Id);
