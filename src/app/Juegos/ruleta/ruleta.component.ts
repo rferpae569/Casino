@@ -1,11 +1,39 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ruleta',
   templateUrl: './ruleta.component.html',
   styleUrls: ['./ruleta.component.scss']
 })
-export class RuletaComponent  {
+export class RuletaComponent implements OnInit  {
+
+  usuario: string | null = null;
+  dropdownVisible: boolean = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    const sessionData = localStorage.getItem('session');
+    if (sessionData) {
+      const parsedData = JSON.parse(sessionData);
+      this.usuario = parsedData.usuario;
+    } else {
+      this.router.navigateByUrl('');
+    }
+  }
+
+  // Función para alternar la visibilidad del menú desplegable
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
+
+  //Funcion para cerrar sesion
+  logout() {
+    localStorage.removeItem('session');
+    this.router.navigateByUrl('');
+  }
+  
   segments = [
     '0', '32', '15', '19', '4', '21', '2', '25', '17', '34', '6', '27', '13', '36', 
     '11', '30', '8', '23', '10', '5', '24', '16', '33', '1', '20', '14', '31', '9', 
