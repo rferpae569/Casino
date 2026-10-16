@@ -1,0 +1,94 @@
+<header class="header">
+  <!-- Logo del casino -->
+  <div class="logo">
+    <img
+      src="../../assets/LogoCasino.png"
+      class="headerlogo"
+      alt="Logo del Casino"
+    />
+  </div>
+  <!-- Navegación -->
+  <nav class="nav-links">
+    <!-- INICIO -->
+    <ng-container *ngIf="rutaActual === '/'">
+      <a routerLink="/Registro">Registrate</a>
+    </ng-container>
+    <!-- REGISTRO -->
+    <ng-container *ngIf="rutaActual.toLowerCase() === '/registro'">
+      <a routerLink="">Inicio</a>
+    </ng-container>
+    <!-- PÁGINAS INFORMATIVAS -->
+    <ng-container
+      *ngIf="
+        rutaActual.toLowerCase() === '/avisolegal' ||
+        rutaActual.toLowerCase() === '/politicaprivacidad' ||
+        rutaActual.toLowerCase() === '/terminoscondiciones'
+      "
+    >
+      <!-- Sin sesión -->
+      <ng-container *ngIf="!usuario">
+        <a routerLink="">Inicio</a> <a routerLink="/Registro">Registrate</a>
+      </ng-container>
+      <!-- Con sesión -->
+      <ng-container *ngIf="usuario">
+        <a routerLink="/Eleccion">Juegos</a>
+        <a routerLink="/Actualizar">Actualizar cuenta</a>
+        <a routerLink="/Borrar">Borrar cuenta</a>
+        <a routerLink="/Contacto">Contacto</a>
+        <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+      </ng-container>
+    </ng-container>
+    <!-- ELECCIÓN DE JUEGOS -->
+    <ng-container *ngIf="rutaActual.toLowerCase() === '/eleccion'">
+      <a routerLink="/Actualizar">Actualizar cuenta</a>
+      <a routerLink="/Borrar">Borrar Cuenta</a>
+      <a routerLink="/Contacto">Contacto</a>
+      <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+    </ng-container>
+    <!-- ACTUALIZAR CUENTA -->
+    <ng-container *ngIf="rutaActual.toLowerCase() === '/actualizar'">
+      <a routerLink="/Eleccion">Juegos</a>
+      <a routerLink="/Borrar">Borrar Cuenta</a>
+      <a routerLink="/Contacto">Contacto</a>
+      <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+    </ng-container>
+    <!-- BORRAR CUENTA -->
+    <ng-container *ngIf="rutaActual.toLowerCase() === '/borrar'">
+      <a routerLink="/Eleccion">Juegos</a>
+      <a routerLink="/Actualizar">Actualizar cuenta</a>
+      <a routerLink="/Contacto">Contacto</a>
+      <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+    </ng-container>
+    <!-- CONTACTO -->
+    <ng-container *ngIf="rutaActual.toLowerCase() === '/contacto'">
+      <a routerLink="/Eleccion">Juegos</a>
+      <a routerLink="/Actualizar">Actualizar cuenta</a>
+      <a routerLink="/Borrar">Borrar Cuenta</a>
+      <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+    </ng-container>
+    <!-- JUEGOS: RULETA Y TRAGAPERRAS -->
+    <ng-container
+      *ngIf="
+        rutaActual.toLowerCase() === '/ruleta' ||
+        rutaActual.toLowerCase() === '/tragaperras'
+      "
+    >
+      <a routerLink="/Eleccion">Juegos</a>
+      <a routerLink="/Actualizar">Actualizar cuenta</a>
+      <a routerLink="/Borrar">Borrar Cuenta</a>
+      <a routerLink="/Contacto">Contacto</a>
+      <ng-container *ngTemplateOutlet="userMenu"></ng-container>
+    </ng-container>
+  </nav>
+</header>
+<!-- Menú del usuario reutilizable -->
+<ng-template #userMenu>
+  <div *ngIf="usuario" class="user-greeting" (click)="toggleDropdown()">
+    <span>Hola, {{ usuario }}</span>
+    <div [ngClass]="{ show: dropdownVisible }" class="dropdown">
+      <span class="logout-button" (click)="logout(); $event.stopPropagation()">
+        Cerrar sesión
+      </span>
+    </div>
+  </div>
+</ng-template>

@@ -1,23 +1,3 @@
-<!--Cabecera-->
-<header class="header">
-  <div class="logo">
-    <img src="../../assets/LogoCasino.png" alt="Logo del Casino" />
-  </div>
-  <nav class="nav-links">
-    <a routerLink="/Eleccion">Juegos</a>
-    <a routerLink="/Actualizar">Actualizar cuenta</a>
-    <a routerLink="/Borrar">Borrar Cuenta</a>
-    <a routerLink="/Contacto">Contacto</a>
-    <!-- Área que contiene el saludo y el desplegable de sesión -->
-    <div class="user-greeting" (click)="toggleDropdown()">
-      <span *ngIf="usuario">Hola, {{ usuario }}</span>
-      <div [ngClass]="{ show: dropdownVisible }" class="dropdown">
-        <span class="logout-button" (click)="logout()">Cerrar sesión</span>
-      </div>
-    </div>
-  </nav>
-</header>
-<!--Fin Cabecera-->
 <!--Contenedor-->
 <div class="roulette-container">
   <div class="roulette-wheel" [style.transform]="rotation">

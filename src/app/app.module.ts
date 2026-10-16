@@ -16,6 +16,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { BorrarComponent } from './borrar/borrar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
     ActualizarComponent,
     BorrarComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

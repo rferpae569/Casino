@@ -1,0 +1,103 @@
+/* Estilo del header */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 50px;
+background: rgba(26, 26, 46, 0.95);
+color: white;
+width: 100%;
+z-index: 1000;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+height: 70px;
+}
+
+/* Logo */
+.header .logo img {
+  width: 100px;
+  height: auto;
+} 
+
+/* Enlaces de navegación */
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+} 
+
+/* Saludo del usuario */
+.user-greeting {
+  color: #0fbcf9;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.user-greeting span {
+  margin-right: 10px;
+} 
+
+/* Menú desplegable */
+.dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: #2c3e50;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  width: auto;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+.dropdown.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0s;
+} 
+
+/* Botón de cerrar sesión */
+.dropdown .logout-button {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+.dropdown .logout-button:hover {
+  background-color: #c0392b;
+}
