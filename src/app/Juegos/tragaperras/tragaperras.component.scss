@@ -285,46 +285,6 @@ body {
   }
 }
 
-/* Estilo general del footer */
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(26, 26, 46, 0.95);
-  color: white;
-  padding: 20px 0;
-  position: relative;
-  width: 100%;
-  bottom: 0;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Logo en el centro */
-.footer-logo img {
-  width: 150px;
-  height: auto;
-}
-
-/* Enlaces en el footer */
-.footer-links {
-  display: flex;
-  gap: 30px;
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: #0fbcf9;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #00ffff;
-}
-
 body {
   margin-bottom: 70px;
 }
