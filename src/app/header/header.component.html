@@ -96,6 +96,15 @@
       <a routerLink="/Borrar">Borrar Cuenta</a>
       <a routerLink="/Contacto">Contacto</a>
     </ng-container>
+      <!-- Cerrar sesión exclusivo del menú móvil -->
+    <button
+      *ngIf="usuario"
+      class="mobile-logout-button"
+      type="button"
+      (click)="logout()"
+    >
+      Cerrar sesión
+    </button>
     <!-- Saludo del usuario para escritorio -->
     <ng-container *ngTemplateOutlet="userMenu"></ng-container>
   </nav>

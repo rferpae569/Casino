@@ -111,6 +111,11 @@ height: 70px;
   display: none;
 }
 
+/* Botón de cerrar sesión exclusivo del menú móvil */
+.mobile-logout-button {
+  display: none;
+}
+
 /* ============================= /
 / RESPONSIVE: TABLETS Y MÓVILES /
 / ============================= */
@@ -157,40 +162,78 @@ border-radius: 2px;
 background-color: #0fbcf9;
 }
 
-/* Navegación desplegable */
+/* Navegación desplegable con animación */
 .nav-links {
-display: none;
+display: flex;
 position: absolute;
 top: 70px;
 left: 0;
 right: 0;
 width: 100%;
 margin-right: 0;
-padding: 20px;
+padding: 0 20px;
 box-sizing: border-box;
 background: rgba(26, 26, 46, 0.98);
 flex-direction: column;
 align-items: center;
 gap: 20px;
 z-index: 1001;
+
+/* Estado cerrado */
+max-height: 0;
+overflow: hidden;
+opacity: 0;
+visibility: hidden;
+transform: translateY(-10px);
+pointer-events: none;
+
+transition:
+  max-height 0.35s ease,
+  opacity 0.25s ease,
+  transform 0.35s ease,
+  padding 0.35s ease,
+  visibility 0s linear 0.35s;
+
 }
 
-/* Mostrar enlaces al abrir la hamburguesa */
+/* Estado abierto */
 .nav-links.mobile-open {
-display: flex;
+max-height: 600px;
+padding: 20px;
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+pointer-events: auto;
+
+transition:
+  max-height 0.35s ease,
+  opacity 0.25s ease,
+  transform 0.35s ease,
+  padding 0.35s ease,
+  visibility 0s linear 0s;
+
 }
 
 /* Mostrar directamente la navegación cuando solo hay un enlace */
 .nav-links.single-link {
-  display: flex;
-  position: static;
-  width: auto;
-  margin-right: 0;
-  padding: 0;
-  background: transparent;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
+display: flex;
+position: static;
+width: auto;
+margin-right: 0;
+padding: 0;
+background: transparent;
+flex-direction: row;
+align-items: center;
+gap: 0;
+
+max-height: none;
+overflow: visible;
+opacity: 1;
+visibility: visible;
+transform: none;
+pointer-events: auto;
+transition: none;
+
 }
 
 /* Ocultar el saludo de escritorio en móvil */
@@ -204,6 +247,33 @@ top: 35px;
 right: 0;
 z-index: 1002;
 }
+
+  /* Cerrar sesión dentro del menú hamburguesa */
+  .mobile-logout-button {
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-logout-button:hover {
+    background-color: #c0392b;
+  }
+
+  /* Ocultar el cierre de sesión debajo del saludo en móvil */
+  .mobile-actions .dropdown {
+    display: none;
+  }
+
+  .mobile-actions .user-greeting {
+    cursor: default;
+  }
 }
 
 /* Ajustes para móviles pequeños */
