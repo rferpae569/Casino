@@ -85,28 +85,79 @@ body {
   }
 }
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 600px) {
-  .aviso-container {
-    width: 90%;
-    padding: 20px;
-  }
+/* ================================
+RESPONSIVE: TABLETS
+================================ */
 
-  .aviso-container h2,
-  .aviso-container h3 {
-    font-size: 1.5rem;
-  }
-
-  .aviso-container p {
-    font-size: 0.9rem;
-  }
+@media (max-width: 768px) {
+.container {
+padding: 35px 20px;
+box-sizing: border-box;
+background-attachment: scroll;
 }
 
-body {
-  margin-bottom: 70px;
+.aviso-container {
+width: 100%;
+max-width: 800px;
+padding: 25px;
+box-sizing: border-box;
 }
 
-.footer-logo img {
-  width: 150px;
-  height: auto;
+.aviso-container h2,
+.aviso-container h3 {
+font-size: 1.5rem;
+letter-spacing: 1px;
+}
+}
+
+/* ================================
+RESPONSIVE: MÓVILES
+================================ */
+
+@media (max-width: 480px) {
+.container {
+padding: 25px 12px;
+}
+
+.aviso-container {
+width: 100%;
+padding: 20px 15px;
+}
+
+.aviso-container h2 {
+font-size: 1.35rem;
+}
+
+.aviso-container h3 {
+font-size: 1.1rem;
+letter-spacing: 0.5px;
+}
+
+.aviso-container p {
+font-size: 0.95rem;
+line-height: 1.6;
+text-align: left;
+}
+}
+
+/* ================================
+MÓVILES ESTRECHOS
+================================ */
+
+@media (max-width: 360px) {
+.container {
+padding: 20px 8px;
+}
+
+.aviso-container {
+padding: 18px 12px;
+}
+
+.aviso-container h2 {
+font-size: 1.25rem;
+}
+
+.aviso-container h3 {
+font-size: 1rem;
+}
 }
