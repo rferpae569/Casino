@@ -197,3 +197,202 @@ body {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS Y PANTALLAS MEDIANAS
+======================================== */
+
+@media (max-width: 900px) {
+.tragaperras-container {
+min-height: 100vh;
+height: auto;
+box-sizing: border-box;
+padding: 30px 20px;
+background-attachment: scroll;
+}
+
+.slot-machine-wrapper {
+flex-wrap: wrap;
+align-items: center;
+gap: 25px;
+width: 100%;
+margin: 20px auto;
+}
+
+.slot-machine {
+width: 350px;
+max-width: 100%;
+box-sizing: border-box;
+}
+
+.slot-info {
+margin-left: 0;
+width: 350px;
+max-width: 100%;
+box-sizing: border-box;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 600px) {
+.tragaperras-container {
+padding: 25px 15px;
+}
+
+.slot-machine-wrapper {
+flex-direction: column;
+flex-wrap: nowrap;
+gap: 25px;
+margin: 15px auto;
+}
+
+.slot-machine {
+width: 100%;
+max-width: 350px;
+border-width: 4px;
+border-radius: 16px;
+}
+
+.top-decoration {
+padding: 12px 8px;
+}
+
+.title {
+font-size: 1.25rem;
+line-height: 1.4;
+}
+
+.slots {
+margin: 18px 0;
+gap: 5px;
+}
+
+.slot {
+width: 70px;
+height: 70px;
+margin: 0;
+box-sizing: border-box;
+font-size: 1.8rem;
+}
+
+.bottom-decoration {
+padding: 10px 5px;
+}
+
+.lights {
+margin-bottom: 12px;
+}
+
+.light {
+width: 12px;
+height: 12px;
+}
+
+.info-screens {
+justify-content: space-around;
+gap: 5px;
+padding: 0 5px;
+}
+
+.screen {
+width: 65px;
+box-sizing: border-box;
+padding: 7px 4px;
+font-size: 1rem;
+}
+
+.screen-label {
+font-size: 0.7rem;
+}
+
+.controls {
+justify-content: center;
+flex-wrap: wrap;
+gap: 5px;
+padding: 0 5px;
+}
+
+.controls button {
+flex: 1 1 130px;
+max-width: 100%;
+margin: 5px 0;
+padding: 10px 8px;
+font-size: 0.85rem;
+}
+
+.slot-info {
+width: 100%;
+max-width: 350px;
+margin: 0;
+padding: 15px;
+}
+
+.slot-info h2 {
+font-size: 1.4rem;
+}
+
+.slot-info ul {
+font-size: 0.9rem;
+}
+
+.slot-info li {
+margin: 8px 0;
+}
+
+.slot-info h3 {
+font-size: 1.15rem;
+text-align: center;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.tragaperras-container {
+padding: 20px 10px;
+}
+
+.slot-machine {
+padding: 0;
+}
+
+.title {
+font-size: 1.1rem;
+}
+
+.slot {
+width: 60px;
+height: 60px;
+font-size: 1.5rem;
+}
+
+.info-screens {
+gap: 3px;
+padding: 0 2px;
+}
+
+.screen {
+width: 58px;
+font-size: 0.9rem;
+padding: 7px 2px;
+}
+
+.screen-label {
+font-size: 0.65rem;
+}
+
+.controls button {
+flex-basis: 110px;
+font-size: 0.78rem;
+padding: 10px 5px;
+}
+
+.slot-info {
+padding: 12px;
+}
+}

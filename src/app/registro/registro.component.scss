@@ -127,3 +127,113 @@ a:hover {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+.registro-container {
+min-height: 100vh;
+height: auto;
+width: 100%;
+box-sizing: border-box;
+padding: 40px 25px;
+justify-content: center;
+align-items: center;
+background-attachment: scroll;
+}
+
+.registro-container form {
+width: 100%;
+max-width: 500px;
+box-sizing: border-box;
+margin: 0 auto;
+padding: 25px;
+}
+
+.registro-container form input,
+.registro-container form textarea,
+.registro-container form select {
+box-sizing: border-box;
+}
+
+.registro-container .checkbox-group label {
+display: flex;
+align-items: flex-start;
+flex-wrap: nowrap;
+gap: 8px;
+line-height: 1.5;
+}
+
+.registro-container .checkbox-group input[type="checkbox"] {
+flex: 0 0 18px;
+width: 18px;
+height: 18px;
+margin: 3px 0 0;
+}
+
+.registro-container form button {
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+.registro-container {
+padding: 25px 15px;
+}
+
+.registro-container form {
+max-width: 100%;
+padding: 22px 18px;
+border-radius: 15px;
+}
+
+.registro-container form input,
+.registro-container form textarea,
+.registro-container form select {
+font-size: 16px;
+}
+
+.registro-container .checkbox-group label {
+font-size: 14px;
+}
+
+.registro-container .checkbox-group input {
+margin-right: 8px;
+}
+
+.registro-container .error {
+font-size: 13px;
+line-height: 1.4;
+}
+
+.registro-container form button {
+  font-size: 15px;
+  margin-top: 15px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.registro-container {
+padding: 20px 10px;
+}
+
+.registro-container form {
+padding: 18px 14px;
+}
+
+.registro-container .checkbox-group label {
+font-size: 13px;
+}
+}

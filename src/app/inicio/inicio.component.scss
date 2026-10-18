@@ -143,3 +143,123 @@ body {
   box-shadow: 0 0 15px #ff6347, 0 0 25px #ff6347;
   transform: scale(1.05);
 }
+
+/* ========================================
+RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+.login-container {
+min-height: 100vh;
+height: auto;
+box-sizing: border-box;
+padding: 40px 25px;
+justify-content: center;
+background-attachment: scroll;
+}
+
+.login-container form {
+width: 100%;
+max-width: 350px;
+box-sizing: border-box;
+margin-right: 0;
+padding: 25px;
+}
+
+.cookie-banner {
+box-sizing: border-box;
+padding: 20px;
+}
+
+.cookie-content p {
+max-width: 600px;
+line-height: 1.5;
+}
+
+.cookie-buttons {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+}
+
+.cookie-buttons button {
+margin: 5px;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+.login-container {
+padding: 30px 15px;
+}
+
+.login-container form {
+max-width: 100%;
+padding: 22px 18px;
+border-radius: 15px;
+}
+
+.login-container form h2 {
+font-size: 1.5rem;
+text-align: center;
+}
+
+.login-container form input {
+box-sizing: border-box;
+font-size: 16px;
+}
+
+.cookie-banner {
+padding: 15px 12px;
+}
+
+.cookie-content p {
+font-size: 14px;
+line-height: 1.5;
+margin-bottom: 10px;
+}
+
+.cookie-buttons {
+width: 100%;
+gap: 8px;
+}
+
+.cookie-buttons button {
+flex: 1;
+min-width: 110px;
+padding: 10px 12px;
+font-size: 14px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.login-container {
+padding: 25px 10px;
+}
+
+.login-container form {
+padding: 20px 15px;
+}
+
+.login-container form h2 {
+font-size: 1.3rem;
+}
+
+.cookie-banner {
+padding: 12px 8px;
+}
+
+.cookie-buttons button {
+min-width: 100px;
+padding: 10px 8px;
+font-size: 13px;
+}
+}

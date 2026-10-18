@@ -54,3 +54,64 @@ body {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+.eleccion-container {
+min-height: 100vh;
+height: auto;
+box-sizing: border-box;
+padding: 40px 25px;
+gap: 20px;
+background-attachment: scroll;
+}
+
+.eleccion-container a {
+width: 180px;
+box-sizing: border-box;
+margin: 0;
+padding: 20px 15px;
+font-size: 18px;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+.eleccion-container {
+flex-direction: column;
+justify-content: center;
+gap: 25px;
+padding: 30px 20px;
+}
+
+.eleccion-container a {
+width: 100%;
+max-width: 280px;
+min-height: 80px;
+padding: 20px;
+font-size: 18px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.eleccion-container {
+padding: 25px 15px;
+gap: 20px;
+}
+
+.eleccion-container a {
+max-width: 250px;
+min-height: 70px;
+font-size: 17px;
+}
+}

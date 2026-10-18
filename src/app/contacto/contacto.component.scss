@@ -80,3 +80,79 @@ form button:hover {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+.contacto-container {
+min-height: 100vh;
+height: auto;
+width: 100%;
+box-sizing: border-box;
+padding: 40px 25px;
+justify-content: center;
+align-items: center;
+background-attachment: scroll;
+}
+
+.contacto-container form {
+width: 100%;
+max-width: 500px;
+box-sizing: border-box;
+margin: 0 auto;
+padding: 25px;
+}
+
+.contacto-container form input,
+.contacto-container form textarea,
+.contacto-container form select {
+width: 100%;
+box-sizing: border-box;
+}
+
+.contacto-container form textarea {
+resize: vertical;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+.contacto-container {
+padding: 25px 15px;
+}
+
+.contacto-container form {
+max-width: 100%;
+padding: 22px 18px;
+border-radius: 15px;
+}
+
+.contacto-container form input,
+.contacto-container form textarea,
+.contacto-container form select {
+font-size: 16px;
+}
+
+.contacto-container form button {
+font-size: 15px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.contacto-container {
+padding: 20px 10px;
+}
+
+.contacto-container form {
+padding: 18px 14px;
+}
+}

@@ -288,3 +288,240 @@ body {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS Y PANTALLAS MEDIANAS
+======================================== */
+
+@media (max-width: 1100px) {
+.roulette-container {
+min-height: 100vh;
+height: auto;
+box-sizing: border-box;
+padding: 40px 20px;
+gap: 30px;
+flex-wrap: wrap;
+background-attachment: scroll;
+}
+
+.roulette-wheel {
+width: 320px;
+height: 320px;
+flex-shrink: 0;
+}
+
+.betting-table {
+width: 100%;
+max-width: 620px;
+box-sizing: border-box;
+}
+
+.table-container {
+width: 100%;
+box-sizing: border-box;
+padding: 15px;
+}
+
+.bets {
+grid-template-columns: repeat(12, minmax(0, 1fr));
+gap: 4px;
+}
+
+.bets button {
+width: 100%;
+min-width: 0;
+height: 35px;
+padding: 2px;
+font-size: 12px;
+box-sizing: border-box;
+}
+
+.range-options {
+display: flex;
+gap: 8px;
+width: 100%;
+justify-content: center;
+}
+
+.range-options button {
+flex: 1 1 0;
+width: auto;
+max-width: none;
+min-width: 0;
+padding: 8px 4px;
+font-size: 14px;
+white-space: nowrap;
+box-sizing: border-box;
+}
+
+.spin-section {
+gap: 15px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.spin-section .spin-button {
+margin: 0;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 600px) {
+.roulette-container {
+flex-direction: column;
+align-items: center;
+padding: 25px 12px;
+gap: 25px;
+}
+
+.roulette-wheel {
+width: min(280px, 85vw);
+height: min(280px, 85vw);
+border-width: 8px;
+}
+
+.betting-table {
+width: 100%;
+max-width: 450px;
+padding: 15px 10px;
+border-radius: 12px;
+}
+
+.table-title {
+font-size: 21px;
+margin-bottom: 15px;
+}
+
+.table-container {
+padding: 10px 6px;
+border-width: 3px;
+border-radius: 10px;
+}
+
+.bets {
+grid-template-columns: repeat(6, minmax(0, 1fr));
+gap: 5px;
+margin-bottom: 15px;
+}
+
+.bets button {
+width: 100%;
+height: 38px;
+padding: 2px;
+font-size: 13px;
+}
+
+.credits-indicator {
+margin: 10px 0;
+font-size: 1.05em;
+}
+
+.range-options {
+width: 100%;
+gap: 5px;
+margin-top: 12px;
+margin-bottom: 15px;
+}
+
+.range-options button {
+width: auto;
+min-width: 0;
+height: auto;
+min-height: 48px;
+flex: 1;
+padding: 8px 3px;
+margin-bottom: 5px;
+font-size: 12px;
+}
+
+.color-options,
+.parity-options {
+justify-content: center;
+gap: 10px;
+}
+
+.bet-options button {
+width: 100px;
+max-width: 42%;
+height: 40px;
+font-size: 14px;
+}
+
+.spin-section {
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 12px;
+margin-top: 15px;
+text-align: center;
+}
+
+.spin-section .resultado,
+.spin-section .mensaje {
+margin: 0;
+font-size: 15px;
+overflow-wrap: anywhere;
+}
+
+.spin-section .spin-button {
+width: 100%;
+max-width: 250px;
+padding: 12px 15px;
+font-size: 16px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.roulette-container {
+padding: 20px 8px;
+gap: 20px;
+}
+
+.roulette-wheel {
+width: 240px;
+height: 240px;
+}
+
+.betting-table {
+padding: 12px 7px;
+}
+
+.table-title {
+font-size: 19px;
+}
+
+.table-container {
+padding: 8px 4px;
+}
+
+.bets {
+gap: 3px;
+}
+
+.bets button {
+height: 34px;
+font-size: 12px;
+}
+
+.range-options button {
+font-size: 11px;
+padding: 7px 2px;
+}
+
+.bet-options button {
+width: 90px;
+font-size: 13px;
+}
+
+.spin-section .resultado,
+.spin-section .mensaje {
+font-size: 14px;
+}
+}

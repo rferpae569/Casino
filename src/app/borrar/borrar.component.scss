@@ -94,3 +94,100 @@ textarea[disabled] {
 body {
   margin-bottom: 70px;
 }
+
+/* ========================================
+RESPONSIVE: TABLETS
+======================================== */
+
+@media (max-width: 768px) {
+.borrar-container {
+min-height: 100vh;
+height: auto;
+width: 100%;
+box-sizing: border-box;
+padding: 40px 25px;
+justify-content: center;
+align-items: center;
+background-attachment: scroll;
+}
+
+.borrar-container form {
+width: 100%;
+max-width: 500px;
+box-sizing: border-box;
+margin: 0 auto;
+padding: 25px;
+}
+
+.borrar-container form input,
+.borrar-container form textarea,
+.borrar-container form select {
+box-sizing: border-box;
+}
+
+.borrar-container form h2 {
+font-size: 1.5rem;
+line-height: 1.4;
+}
+
+.borrar-container form h3 {
+font-size: 1.2rem;
+line-height: 1.4;
+}
+}
+
+/* ========================================
+RESPONSIVE: MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+.borrar-container {
+padding: 25px 15px;
+}
+
+.borrar-container form {
+max-width: 100%;
+padding: 22px 18px;
+border-radius: 15px;
+}
+
+.borrar-container form h2 {
+font-size: 1.25rem;
+}
+
+.borrar-container form h3 {
+font-size: 1.05rem;
+}
+
+.borrar-container form input,
+.borrar-container form textarea,
+.borrar-container form select {
+font-size: 16px;
+}
+
+.borrar-container form button {
+font-size: 15px;
+}
+}
+
+/* ========================================
+MÓVILES ESTRECHOS
+======================================== */
+
+@media (max-width: 360px) {
+.borrar-container {
+padding: 20px 10px;
+}
+
+.borrar-container form {
+padding: 18px 14px;
+}
+
+.borrar-container form h2 {
+font-size: 1.15rem;
+}
+
+.borrar-container form h3 {
+font-size: 1rem;
+}
+}
